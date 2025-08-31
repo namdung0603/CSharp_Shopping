@@ -1,13 +1,14 @@
 ﻿using Shopping.Contract.Enums;
 using Shopping.Infrastructure.Models.Base;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Shopping.Infrastructure.Models {
     public class User : BaseModel {
         [Required]
         [EmailAddress]
         [MaxLength(255)]
-        public string Email { get; set; }
+        public required string Email { get; set; }
 
         [Required]
         [MaxLength(255)]
@@ -16,11 +17,18 @@ namespace Shopping.Infrastructure.Models {
         [Required]
         public required string Password { get; set; }
         public string Avatar { get; set; }
+        [Column(TypeName = "int")]
+        public RoleType Role { get; set; }
+
+        [Column(TypeName = "bit")]
+        public bool IsActive { get; set; }
         public string? AccessToken { get; set; }
         public DateTime? AccessTokenExpired { get; set; }
         public string? RefreshToken { get; set; }
         public DateTime? RefreshTokenExpired { get; set; }
-        public AccountType AccountType { get; set; }
 
+        [Column(TypeName = "int")]
+        public AccountType AccountType { get; set; }
+        public Cart Cart { get; set; }
     }
 }
