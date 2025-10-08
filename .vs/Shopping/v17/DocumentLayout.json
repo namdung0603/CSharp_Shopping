@@ -50,8 +50,7 @@
               "RelativeToolTip": "Shopping.Api\\Mapping\\MappingProfile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T03:37:32.97Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-03T03:37:32.97Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "Shopping.ApplicationService\\DTO\\Request\\UserRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T03:32:08.456Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-03T03:32:08.456Z"
             },
             {
               "$type": "Document",
@@ -76,8 +74,7 @@
               "RelativeToolTip": "Shopping.Infrastructor\\Repository\\UserRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T17:00:15.551Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-27T17:00:15.551Z"
             },
             {
               "$type": "Document",
@@ -89,8 +86,7 @@
               "RelativeToolTip": "Shopping.Infrastructor\\Repository\\IBase\\IUserRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T16:57:43.538Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-27T16:57:43.538Z"
             },
             {
               "$type": "Document",
@@ -100,7 +96,7 @@
               "RelativeDocumentMoniker": "Shopping.Api\\Controllers\\UserController.cs",
               "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Api\\Controllers\\UserController.cs",
               "RelativeToolTip": "Shopping.Api\\Controllers\\UserController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAYwC8AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAYwDMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-26T04:43:52.768Z",
               "EditorCaption": ""

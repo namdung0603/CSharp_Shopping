@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Shopping.ApplicationService.DTO.Request;
 using Shopping.ApplicationService.DTO.Response;
 using Shopping.Contract;
@@ -56,16 +57,15 @@ namespace Shopping.Api.Controllers {
             return Ok(userSaveResponse);
         }
 
-        [HttpPut]
-        public IActionResult UpdateUser(int id, [FromBody] UserRequest userRequest) {
-            if (userRequest is null) {
-                return BadRequest("Thong tin cap nhan trong conmeno roi kia. Dien di!");
-            }
+        [HttpPut("{id}")]
+        public IActionResult UpdateUser(int id, [FromBody(EmptyBodyBehavior = EmptyBodyBehavior.Allow)] UserRequest? userRequest) {
             var user = _repository.UserRepository.GetUserById(id);
             if (user is null) {
                 return BadRequest($"Id = {id} co ton tai meo dau ma tim!");
             }
-
+            if (userRequest is null) {
+                return BadRequest("Thong tin cap nhan trong conmeno roi kia. Dien di!");
+            }
             _mapper.Map(userRequest, user);// Cập nhật dữ liệu sẵn có vào 1 User sẵn có
             _repository.UserRepository.UpdateUser(user);
             _repository.Save();
