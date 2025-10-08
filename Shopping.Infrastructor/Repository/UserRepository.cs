@@ -16,6 +16,10 @@ namespace Shopping.Infrastructure.Repository {
             Create(user);
         }
 
+        public void DeleteUser(User user) {
+            Delete(user);
+        }
+
         public IEnumerable<User> GetAllUser() {
             return FindAll().OrderBy(x => x.Fullname).ToList();
         }

@@ -57,19 +57,24 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRequestSignin"
+              }
+            },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequest"
+                "$ref": "#/components/schemas/UserRequestSignin"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequest"
+                "$ref": "#/components/schemas/UserRequestSignin"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequest"
+                "$ref": "#/components/schemas/UserRequestSignin"
               }
             }
           }
@@ -120,19 +125,102 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRequestUpdate"
+              }
+            },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequest"
+                "$ref": "#/components/schemas/UserRequestUpdate"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequest"
+                "$ref": "#/components/schemas/UserRequestUpdate"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequest"
+                "$ref": "#/components/schemas/UserRequestUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
               }
             }
           }
@@ -147,7 +235,44 @@
   },
   "components": {
     "schemas": {
-      "UserRequest": {
+      "Operation": {
+        "type": "object",
+        "properties": {
+          "operationType": {
+            "$ref": "#/components/schemas/OperationType"
+          },
+          "path": {
+            "type": "string",
+            "nullable": true
+          },
+          "op": {
+            "type": "string",
+            "nullable": true
+          },
+          "from": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OperationType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "UserRequestSignin": {
         "required": [
           "address",
           "email",
@@ -178,6 +303,28 @@
             "nullable": true
           },
           "avatar": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserRequestUpdate": {
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "avatar": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
             "type": "string",
             "nullable": true
           }

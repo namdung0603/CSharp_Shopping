@@ -14,6 +14,7 @@ namespace Shopping.Api {
             // Add services to the container.
 
             builder.Services.AddAutoMapper(typeof(MappingProfile));
+            builder.Services.AddControllers().AddNewtonsoftJson();
             builder.Services.AddControllers();
             builder.Services.AddDbContext<ShoppingContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

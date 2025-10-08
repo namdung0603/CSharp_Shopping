@@ -12,7 +12,9 @@ namespace Shopping.ApplicationService.Mapping {
     public class MappingProfile : Profile {
         public MappingProfile() {
             CreateMap<User, UserResponse>();
-            CreateMap<UserRequest, User>();
+            CreateMap<UserRequestSignin, User>();
+            CreateMap<UserRequestUpdate, User>();
+            CreateMap<User, UserRequestUpdate>();
         }
     }
 }

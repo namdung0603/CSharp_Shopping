@@ -45,7 +45,7 @@
     "Parameters": [
       {
         "Name": "userRequest",
-        "Type": "Shopping.ApplicationService.DTO.Request.UserRequest",
+        "Type": "Shopping.ApplicationService.DTO.Request.UserRequestSignin",
         "IsRequired": true
       }
     ],
@@ -81,9 +81,46 @@
         "IsRequired": true
       },
       {
-        "Name": "userRequest",
-        "Type": "Shopping.ApplicationService.DTO.Request.UserRequest",
+        "Name": "userRequestUpdate",
+        "Type": "Shopping.ApplicationService.DTO.Request.UserRequestUpdate",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shopping.Api.Controllers.UserController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shopping.Api.Controllers.UserController",
+    "Method": "UpdateInformationDetail",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "patchDoc",
+        "Type": "Microsoft.AspNetCore.JsonPatch.Operations.Operation[]",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

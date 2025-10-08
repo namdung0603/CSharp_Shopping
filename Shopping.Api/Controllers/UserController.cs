@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Shopping.ApplicationService.DTO.Request;
@@ -42,7 +43,7 @@ namespace Shopping.Api.Controllers {
         }
 
         [HttpPost]
-        public IActionResult CreateUser([FromBody] UserRequest userRequest) {
+        public IActionResult CreateUser([FromBody] UserRequestSignin userRequest) {
             var user = _mapper.Map<User>(userRequest);// 
             if (user is null) {
                 return BadRequest("Dmm! Tao duoc deo dau!");
@@ -58,19 +59,47 @@ namespace Shopping.Api.Controllers {
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateUser(int id, [FromBody(EmptyBodyBehavior = EmptyBodyBehavior.Allow)] UserRequest? userRequest) {
+        public IActionResult UpdateUser(int id, [FromBody(EmptyBodyBehavior = EmptyBodyBehavior.Allow)] UserRequestUpdate? userRequestUpdate) {
             var user = _repository.UserRepository.GetUserById(id);
             if (user is null) {
-                return BadRequest($"Id = {id} co ton tai meo dau ma tim!");
+                return NotFound($"Id = {id} co ton tai meo dau ma tim!");
             }
-            if (userRequest is null) {
+            if (userRequestUpdate is null) {
                 return BadRequest("Thong tin cap nhan trong conmeno roi kia. Dien di!");
             }
-            _mapper.Map(userRequest, user);// Cập nhật dữ liệu sẵn có vào 1 User sẵn có
+            _mapper.Map(userRequestUpdate, user);// Cập nhật dữ liệu sẵn có vào 1 User sẵn có
             _repository.UserRepository.UpdateUser(user);
             _repository.Save();
             return Ok("Update roi nhe baby!");
 
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteUser(int id) {
+            var user = _repository.UserRepository.GetUserById(id);
+            if (user is null) {
+                return NotFound($"Co {id} nay meo dau ma tim!");
+            }
+            _repository.UserRepository.DeleteUser(user);
+            _repository.Save();// sau khi xóa vẫn phải Save???
+            return Ok("Xoa duoc roi nhe em yeu!");
+        }
+
+        [HttpPatch("{id}")]
+        public IActionResult UpdateInformationDetail(int id, [FromBody] JsonPatchDocument<UserRequestUpdate> patchDoc) {
+            var user = _repository.UserRepository.GetUserById(id);
+            if (user is null) {
+                return NotFound($"Khong tim thay nguoi dung co ID = {id}");
+            }
+            var userPatch = _mapper.Map<UserRequestUpdate>(user);
+            patchDoc.ApplyTo(userPatch, ModelState);
+            if (!ModelState.IsValid) {
+                return BadRequest(ModelState);
+            }
+            _mapper.Map(userPatch, user);
+            _repository.UserRepository.UpdateUser(user);
+            _repository.Save();
+            return Ok("Update thanh cong!");
         }
     }
 }

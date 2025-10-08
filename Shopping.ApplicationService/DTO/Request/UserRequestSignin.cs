@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Shopping.ApplicationService.DTO.Request {
-    public class UserRequest {
+    public class UserRequestSignin {
         public required string FullName { get; set; }
         public required string Email { get; set; }
         public required string Password { get; set; }

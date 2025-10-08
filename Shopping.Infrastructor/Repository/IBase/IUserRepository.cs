@@ -6,5 +6,6 @@ namespace Shopping.Infrastructure.Repository.IBase {
         User GetUserById(int id);
         void CreateUser(User user);
         void UpdateUser(User user);
+        void DeleteUser(User user);
     }
 }
