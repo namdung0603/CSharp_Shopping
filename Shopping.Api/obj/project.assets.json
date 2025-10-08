@@ -2,6 +2,35 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "[12.0.1]",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Azure.Core/1.38.0": {
         "type": "package",
         "dependencies": {
@@ -365,7 +394,7 @@
           }
         }
       },
-      "Microsoft.CSharp/4.5.0": {
+      "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -433,11 +462,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/8.0.19": {
+      "Microsoft.EntityFrameworkCore/8.0.20": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "8.0.19",
-          "Microsoft.EntityFrameworkCore.Analyzers": "8.0.19",
+          "Microsoft.EntityFrameworkCore.Abstractions": "8.0.20",
+          "Microsoft.EntityFrameworkCore.Analyzers": "8.0.20",
           "Microsoft.Extensions.Caching.Memory": "8.0.1",
           "Microsoft.Extensions.Logging": "8.0.1"
         },
@@ -455,7 +484,7 @@
           "buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/8.0.19": {
+      "Microsoft.EntityFrameworkCore.Abstractions/8.0.20": {
         "type": "package",
         "compile": {
           "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
@@ -468,7 +497,7 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/8.0.19": {
+      "Microsoft.EntityFrameworkCore.Analyzers/8.0.20": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -500,10 +529,10 @@
           "build/net8.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/8.0.19": {
+      "Microsoft.EntityFrameworkCore.Relational/8.0.20": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "8.0.19",
+          "Microsoft.EntityFrameworkCore": "8.0.20",
           "Microsoft.Extensions.Configuration.Abstractions": "8.0.0"
         },
         "compile": {
@@ -517,11 +546,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/8.0.19": {
+      "Microsoft.EntityFrameworkCore.SqlServer/8.0.20": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.6",
-          "Microsoft.EntityFrameworkCore.Relational": "8.0.19",
+          "Microsoft.EntityFrameworkCore.Relational": "8.0.20",
           "System.Formats.Asn1": "8.0.2"
         },
         "compile": {
@@ -1663,10 +1692,77 @@
             "rid": "win"
           }
         }
+      },
+      "Shopping.ApplicationService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Shopping.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Shopping.ApplicationService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Shopping.ApplicationService.dll": {}
+        }
+      },
+      "Shopping.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Shopping.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Shopping.Contract.dll": {}
+        }
+      },
+      "Shopping.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.20",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.20",
+          "Shopping.Contract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Shopping.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Shopping.Infrastructure.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AutoMapper/12.0.1": {
+      "sha512": "hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
+      "type": "package",
+      "path": "automapper/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.12.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+      "sha512": "+g/K+Vpe3gGMKGzjslMOdqNlkikScDjWfVvmWTayrDHaG/n2pPmFBMa+jKX1r/h6BDGFdkyRjAuhFE3ykW+r1g==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+      ]
+    },
     "Azure.Core/1.38.0": {
       "sha512": "IuEgCoVA0ef7E4pQtpC3+TkPbzaoQfa77HlfJDmfuaJUCVJmn7fT0izamZiryW5sYUFKizsftIxMkXKbgIcPMQ==",
       "type": "package",
@@ -2228,10 +2324,10 @@
         "microsoft.codeanalysis.workspaces.common.nuspec"
       ]
     },
-    "Microsoft.CSharp/4.5.0": {
-      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+    "Microsoft.CSharp/4.7.0": {
+      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "type": "package",
-      "path": "microsoft.csharp/4.5.0",
+      "path": "microsoft.csharp/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2244,6 +2340,7 @@
         "lib/netcoreapp2.0/_._",
         "lib/netstandard1.3/Microsoft.CSharp.dll",
         "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
         "lib/portable-net45+win8+wp8+wpa81/_._",
         "lib/uap10.0.16299/_._",
         "lib/win8/_._",
@@ -2253,7 +2350,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.5.0.nupkg.sha512",
+        "microsoft.csharp.4.7.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -2373,10 +2470,10 @@
         "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll"
       ]
     },
-    "Microsoft.EntityFrameworkCore/8.0.19": {
-      "sha512": "3SL+NNXRE/ucuVO1yKz5l3VY4x3k/ds9OK0rAE2W80V9Imvo3cXFGemYj5nAKnFOERxoRek/vwOPjSVTF4R52w==",
+    "Microsoft.EntityFrameworkCore/8.0.20": {
+      "sha512": "htQ4w2VmHGiDk8nbdpkeithh7/wBbByu0HvKx32uyCneK1WPPbc/fDhqXcIIj2NK4J6dRFTCE4Y1NrlUIl/uBw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/8.0.19",
+      "path": "microsoft.entityframeworkcore/8.0.20",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2385,14 +2482,14 @@
         "buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props",
         "lib/net8.0/Microsoft.EntityFrameworkCore.dll",
         "lib/net8.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.8.0.19.nupkg.sha512",
+        "microsoft.entityframeworkcore.8.0.20.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/8.0.19": {
-      "sha512": "3INN1Vti9EUVwb83o5uygUdjHgZCPLmQPpKptixh3hivggUCq1eZmU9QtyxwmK0HA6NXbZ5tyPIHSQNsMPS6aw==",
+    "Microsoft.EntityFrameworkCore.Abstractions/8.0.20": {
+      "sha512": "XPyMIlGNj1RJatIuNPs5sT7MVLOd5SURPQ4os1TH72Mi6rJDMQrT0WHWGpAZOcNapwW4gpmco6adGX3iNqv6mQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/8.0.19",
+      "path": "microsoft.entityframeworkcore.abstractions/8.0.20",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2400,14 +2497,14 @@
         "PACKAGE.md",
         "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.8.0.19.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.8.0.20.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/8.0.19": {
-      "sha512": "OdLnhf4Mjm6OkhraTKK2Ye/Ok6VVcb5p1wtWfZBKKC3lHwQAisnv0BokE6NrLiySdcseVTI/ZAcQ+fGZVAx5Kg==",
+    "Microsoft.EntityFrameworkCore.Analyzers/8.0.20": {
+      "sha512": "U8C8YToCXkaDczeohD7xJKhqKZ9cg0pRsL+cz6zhQr7Y0UQ7eRXhTBy5zIi9YSo82dzN1vawkn6iN9/4k0Zduw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/8.0.19",
+      "path": "microsoft.entityframeworkcore.analyzers/8.0.20",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2415,7 +2512,7 @@
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "docs/PACKAGE.md",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.8.0.19.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.8.0.20.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
@@ -2435,10 +2532,10 @@
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/8.0.19": {
-      "sha512": "WAjIlb+t/kaCAmq+bwb07lJ0M+mo1QWRhqcqO9MmS4uoE9PihjhsSwe5WwUDa5dGAYpahOAw3msOiyF1MCoO/w==",
+    "Microsoft.EntityFrameworkCore.Relational/8.0.20": {
+      "sha512": "ailC6nZmDiSJm0LVFDmacibPccm1Pvaznk4Sk9Kl/XXzCglDu6dlilbmN4gO5I2Vr6Mm1GXu03UJ6XOGyXIgEA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/8.0.19",
+      "path": "microsoft.entityframeworkcore.relational/8.0.20",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2446,14 +2543,14 @@
         "PACKAGE.md",
         "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.8.0.19.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.8.0.20.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/8.0.19": {
-      "sha512": "yJYSeLVOU82WGVXxTSJ0M/sobRXR2DponHT3fy0a26CmFFgGSkt8Nyn8hmHyTRu4QbgbmZhPiUBz884CgrkRuQ==",
+    "Microsoft.EntityFrameworkCore.SqlServer/8.0.20": {
+      "sha512": "13941/iy9xLFupFfsVJbSrwxfngEcfEvkb6Hwx64XbNSSpxqXBAT3BYdQmLmQHcMhQ64joo5inzwUfm/hsr3hg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlserver/8.0.19",
+      "path": "microsoft.entityframeworkcore.sqlserver/8.0.20",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2461,7 +2558,7 @@
         "PACKAGE.md",
         "lib/net8.0/Microsoft.EntityFrameworkCore.SqlServer.dll",
         "lib/net8.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
-        "microsoft.entityframeworkcore.sqlserver.8.0.19.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.8.0.20.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
@@ -4604,14 +4701,31 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Shopping.ApplicationService/1.0.0": {
+      "type": "project",
+      "path": "../Shopping.ApplicationService/Shopping.ApplicationService.csproj",
+      "msbuildProject": "../Shopping.ApplicationService/Shopping.ApplicationService.csproj"
+    },
+    "Shopping.Contract/1.0.0": {
+      "type": "project",
+      "path": "../Shopping.Contract/Shopping.Contract.csproj",
+      "msbuildProject": "../Shopping.Contract/Shopping.Contract.csproj"
+    },
+    "Shopping.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Shopping.Infrastructor/Shopping.Infrastructure.csproj",
+      "msbuildProject": "../Shopping.Infrastructor/Shopping.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.19",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.19",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.19",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.19",
+      "Shopping.ApplicationService >= 1.0.0",
+      "Shopping.Infrastructure >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
@@ -4646,7 +4760,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.ApplicationService\\Shopping.ApplicationService.csproj": {
+              "projectPath": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.ApplicationService\\Shopping.ApplicationService.csproj"
+            },
+            "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Shopping.Infrastructure.csproj": {
+              "projectPath": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Shopping.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -4665,6 +4786,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[12.0.1, )"
+          },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.19, )"
@@ -4672,10 +4797,6 @@
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
-            "target": "Package",
-            "version": "[8.0.19, )"
-          },
-          "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[8.0.19, )"
           },

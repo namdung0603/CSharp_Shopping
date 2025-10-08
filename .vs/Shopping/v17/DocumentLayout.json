@@ -3,56 +3,24 @@
   "WorkspaceRootPath": "D:\\DeveloperWithCSharp\\Project\\Shopping\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.infrastructor\\models\\shippingmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|solutionrelative:shopping.infrastructor\\models\\shippingmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A2D3D1D-C5DE-4548-A7D3-13129541895C}|Shopping.Api\\Shopping.Api.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A2D3D1D-C5DE-4548-A7D3-13129541895C}|Shopping.Api\\Shopping.Api.csproj|solutionrelative:shopping.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.infrastructor\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|solutionrelative:shopping.infrastructor\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.infrastructor\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|solutionrelative:shopping.infrastructor\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.infrastructor\\models\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|solutionrelative:shopping.infrastructor\\models\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.infrastructor\\repository\\ibase\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|solutionrelative:shopping.infrastructor\\repository\\ibase\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.infrastructor\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|solutionrelative:shopping.infrastructor\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A2D3D1D-C5DE-4548-A7D3-13129541895C}|Shopping.Api\\Shopping.Api.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.api\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A2D3D1D-C5DE-4548-A7D3-13129541895C}|Shopping.Api\\Shopping.Api.csproj|solutionrelative:shopping.api\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.infrastructor\\models\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|solutionrelative:shopping.infrastructor\\models\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.infrastructor\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|solutionrelative:shopping.infrastructor\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.infrastructor\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|solutionrelative:shopping.infrastructor\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.infrastructor\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|solutionrelative:shopping.infrastructor\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.infrastructor\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|solutionrelative:shopping.infrastructor\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.infrastructor\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|solutionrelative:shopping.infrastructor\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.infrastructor\\models\\carriermethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|solutionrelative:shopping.infrastructor\\models\\carriermethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.infrastructor\\models\\carrier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|solutionrelative:shopping.infrastructor\\models\\carrier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.infrastructor\\shoppingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC9CFC23-F419-4650-9B30-12557D19625B}|Shopping.Infrastructor\\Shopping.Infrastructure.csproj|solutionrelative:shopping.infrastructor\\shoppingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FCF4C224-E2A1-4EC1-8CBB-FBD1A2877707}|Shopping.ApplicationService\\Shopping.ApplicationService.csproj|d:\\developerwithcsharp\\project\\shopping\\shopping.applicationservice\\dto\\request\\userrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCF4C224-E2A1-4EC1-8CBB-FBD1A2877707}|Shopping.ApplicationService\\Shopping.ApplicationService.csproj|solutionrelative:shopping.applicationservice\\dto\\request\\userrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,171 +42,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Permission.cs",
-              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\Permission.cs",
-              "RelativeDocumentMoniker": "Shopping.Infrastructor\\Models\\Permission.cs",
-              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\Permission.cs",
-              "RelativeToolTip": "Shopping.Infrastructor\\Models\\Permission.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Api\\Mapping\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "Shopping.Api\\Mapping\\MappingProfile.cs",
+              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Api\\Mapping\\MappingProfile.cs",
+              "RelativeToolTip": "Shopping.Api\\Mapping\\MappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T15:14:28.113Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Category.cs",
-              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "Shopping.Infrastructor\\Models\\Category.cs",
-              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\Category.cs",
-              "RelativeToolTip": "Shopping.Infrastructor\\Models\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T15:11:24.039Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ShippingMethod.cs",
-              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\ShippingMethod.cs",
-              "RelativeDocumentMoniker": "Shopping.Infrastructor\\Models\\ShippingMethod.cs",
-              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\ShippingMethod.cs",
-              "RelativeToolTip": "Shopping.Infrastructor\\Models\\ShippingMethod.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T15:07:55.895Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CarrierMethod.cs",
-              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\CarrierMethod.cs",
-              "RelativeDocumentMoniker": "Shopping.Infrastructor\\Models\\CarrierMethod.cs",
-              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\CarrierMethod.cs",
-              "RelativeToolTip": "Shopping.Infrastructor\\Models\\CarrierMethod.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T15:06:48.583Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Carrier.cs",
-              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\Carrier.cs",
-              "RelativeDocumentMoniker": "Shopping.Infrastructor\\Models\\Carrier.cs",
-              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\Carrier.cs",
-              "RelativeToolTip": "Shopping.Infrastructor\\Models\\Carrier.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T15:06:31.52Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Order.cs",
-              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\Order.cs",
-              "RelativeDocumentMoniker": "Shopping.Infrastructor\\Models\\Order.cs",
-              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\Order.cs",
-              "RelativeToolTip": "Shopping.Infrastructor\\Models\\Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T15:05:58.008Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OrderDetail.cs",
-              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\OrderDetail.cs",
-              "RelativeDocumentMoniker": "Shopping.Infrastructor\\Models\\OrderDetail.cs",
-              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\OrderDetail.cs",
-              "RelativeToolTip": "Shopping.Infrastructor\\Models\\OrderDetail.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T15:05:56.908Z",
+              "WhenOpened": "2025-10-03T03:37:32.97Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ProductImage.cs",
-              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\ProductImage.cs",
-              "RelativeDocumentMoniker": "Shopping.Infrastructor\\Models\\ProductImage.cs",
-              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\ProductImage.cs",
-              "RelativeToolTip": "Shopping.Infrastructor\\Models\\ProductImage.cs",
+              "Title": "UserRequest.cs",
+              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.ApplicationService\\DTO\\Request\\UserRequest.cs",
+              "RelativeDocumentMoniker": "Shopping.ApplicationService\\DTO\\Request\\UserRequest.cs",
+              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.ApplicationService\\DTO\\Request\\UserRequest.cs",
+              "RelativeToolTip": "Shopping.ApplicationService\\DTO\\Request\\UserRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T15:05:49.386Z",
+              "WhenOpened": "2025-10-03T03:32:08.456Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Product.cs",
-              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "Shopping.Infrastructor\\Models\\Product.cs",
-              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\Product.cs",
-              "RelativeToolTip": "Shopping.Infrastructor\\Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAmAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Repository\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Shopping.Infrastructor\\Repository\\UserRepository.cs",
+              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Repository\\UserRepository.cs",
+              "RelativeToolTip": "Shopping.Infrastructor\\Repository\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T15:05:18.301Z",
+              "WhenOpened": "2025-09-27T17:00:15.551Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CartItem.cs",
-              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\CartItem.cs",
-              "RelativeDocumentMoniker": "Shopping.Infrastructor\\Models\\CartItem.cs",
-              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\CartItem.cs",
-              "RelativeToolTip": "Shopping.Infrastructor\\Models\\CartItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Repository\\IBase\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Shopping.Infrastructor\\Repository\\IBase\\IUserRepository.cs",
+              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Repository\\IBase\\IUserRepository.cs",
+              "RelativeToolTip": "Shopping.Infrastructor\\Repository\\IBase\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T15:05:09.743Z",
+              "WhenOpened": "2025-09-27T16:57:43.538Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Shopping.Infrastructor\\Models\\User.cs",
-              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\User.cs",
-              "RelativeToolTip": "Shopping.Infrastructor\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA5AAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Api\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Shopping.Api\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Api\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Shopping.Api\\Controllers\\UserController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwC8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T15:04:24.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ShoppingContext.cs",
-              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\ShoppingContext.cs",
-              "RelativeDocumentMoniker": "Shopping.Infrastructor\\ShoppingContext.cs",
-              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\ShoppingContext.cs",
-              "RelativeToolTip": "Shopping.Infrastructor\\ShoppingContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T15:10:28.343Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Cart.cs",
-              "DocumentMoniker": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\Cart.cs",
-              "RelativeDocumentMoniker": "Shopping.Infrastructor\\Models\\Cart.cs",
-              "ToolTip": "D:\\DeveloperWithCSharp\\Project\\Shopping\\Shopping.Infrastructor\\Models\\Cart.cs",
-              "RelativeToolTip": "Shopping.Infrastructor\\Models\\Cart.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T15:04:23.152Z",
+              "WhenOpened": "2025-09-26T04:43:52.768Z",
               "EditorCaption": ""
             }
           ]

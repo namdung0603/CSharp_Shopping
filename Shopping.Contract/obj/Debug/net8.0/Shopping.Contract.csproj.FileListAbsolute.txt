@@ -1,0 +1,12 @@
+D:\DeveloperWithCSharp\Project\Shopping\Shopping.Contract\bin\Debug\net8.0\Shopping.Contract.deps.json
+D:\DeveloperWithCSharp\Project\Shopping\Shopping.Contract\bin\Debug\net8.0\Shopping.Contract.dll
+D:\DeveloperWithCSharp\Project\Shopping\Shopping.Contract\bin\Debug\net8.0\Shopping.Contract.pdb
+D:\DeveloperWithCSharp\Project\Shopping\Shopping.Contract\obj\Debug\net8.0\Shopping.Contract.GeneratedMSBuildEditorConfig.editorconfig
+D:\DeveloperWithCSharp\Project\Shopping\Shopping.Contract\obj\Debug\net8.0\Shopping.Contract.AssemblyInfoInputs.cache
+D:\DeveloperWithCSharp\Project\Shopping\Shopping.Contract\obj\Debug\net8.0\Shopping.Contract.AssemblyInfo.cs
+D:\DeveloperWithCSharp\Project\Shopping\Shopping.Contract\obj\Debug\net8.0\Shopping.Contract.csproj.CoreCompileInputs.cache
+D:\DeveloperWithCSharp\Project\Shopping\Shopping.Contract\obj\Debug\net8.0\Shopping.Contract.sourcelink.json
+D:\DeveloperWithCSharp\Project\Shopping\Shopping.Contract\obj\Debug\net8.0\Shopping.Contract.dll
+D:\DeveloperWithCSharp\Project\Shopping\Shopping.Contract\obj\Debug\net8.0\refint\Shopping.Contract.dll
+D:\DeveloperWithCSharp\Project\Shopping\Shopping.Contract\obj\Debug\net8.0\Shopping.Contract.pdb
+D:\DeveloperWithCSharp\Project\Shopping\Shopping.Contract\obj\Debug\net8.0\ref\Shopping.Contract.dll

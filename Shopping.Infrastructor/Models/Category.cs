@@ -9,6 +9,6 @@ namespace Shopping.Infrastructure.Models {
         public required string CatagoryName { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
-        public List<Product>? Products { get; set; }
+        public ICollection<Product>? Products { get; set; }
     }
 }

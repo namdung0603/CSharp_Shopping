@@ -16,12 +16,12 @@ namespace Shopping.Infrastructure.Models {
 
         [Required]
         public required string Password { get; set; }
-        public string Avatar { get; set; }
+        public string? Avatar { get; set; }
         [Column(TypeName = "int")]
-        public RoleType Role { get; set; }
+        public RoleType Role { get; set; } = RoleType.USER;
 
         [Column(TypeName = "bit")]
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = false;
         public string? AccessToken { get; set; }
         public DateTime? AccessTokenExpired { get; set; }
         public string? RefreshToken { get; set; }
@@ -29,6 +29,5 @@ namespace Shopping.Infrastructure.Models {
 
         [Column(TypeName = "int")]
         public AccountType AccountType { get; set; }
-        public Cart Cart { get; set; }
     }
 }

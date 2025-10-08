@@ -1,5 +1,8 @@
-﻿namespace Shopping.Infrastructure.Models {
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Shopping.Infrastructure.Models {
     public class OrderDetail {
+        [Key]
         public int Id { get; set; }
         public int Quantity { get; set; }
         public double Price { get; set; }
