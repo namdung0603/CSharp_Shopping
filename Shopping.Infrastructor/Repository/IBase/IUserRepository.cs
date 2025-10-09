@@ -7,5 +7,6 @@ namespace Shopping.Infrastructure.Repository.IBase {
         void CreateUser(User user);
         void UpdateUser(User user);
         void DeleteUser(User user);
+        Task<bool> ExistByEmailAsync(string email, CancellationToken ct);
     }
 }

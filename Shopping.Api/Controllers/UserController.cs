@@ -7,6 +7,7 @@ using Shopping.ApplicationService.DTO.Request;
 using Shopping.ApplicationService.DTO.Response;
 using Shopping.Contract;
 using Shopping.Infrastructure.Models;
+using System.Threading.Tasks;
 
 namespace Shopping.Api.Controllers {
     [Route("api/[controller]")]
@@ -43,23 +44,29 @@ namespace Shopping.Api.Controllers {
         }
 
         [HttpPost]
-        public IActionResult CreateUser([FromBody] UserRequestSignin userRequest) {
-            var user = _mapper.Map<User>(userRequest);// 
+        public async Task<IActionResult> CreateUser([FromBody] UserRequestSignin userRequest) {
+            if (await _repository.UserRepository.ExistByEmailAsync(userRequest.Email, HttpContext.RequestAborted)) {
+                return BadRequest("Conme trung mail roi! Nhap lai di!");
+            }
+            var user = _mapper.Map<User>(userRequest);// tạo mới một đối tượng User
             if (user is null) {
                 return BadRequest("Dmm! Tao duoc deo dau!");
             }
             if (!ModelState.IsValid) {
                 return BadRequest("Conme may sai roi kia!");
             }
-            var userSave = _mapper.Map<User>(userRequest);// tạo mới một đối tượng User
-            _repository.UserRepository.CreateUser(userSave);
+
+            _repository.UserRepository.CreateUser(user);
             _repository.Save();
-            var userSaveResponse = _mapper.Map<UserResponse>(userSave);
+            var userSaveResponse = _mapper.Map<UserResponse>(user);
             return Ok(userSaveResponse);
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateUser(int id, [FromBody(EmptyBodyBehavior = EmptyBodyBehavior.Allow)] UserRequestUpdate? userRequestUpdate) {
+        public async Task<IActionResult> UpdateUser(int id, [FromBody(EmptyBodyBehavior = EmptyBodyBehavior.Allow)] UserRequestUpdate? userRequestUpdate) {
+            if (await _repository.UserRepository.ExistByEmailAsync(userRequestUpdate.Email, HttpContext.RequestAborted)) {
+                return BadRequest("Email ton tai roi! Chon cai khac me di!");
+            }
             var user = _repository.UserRepository.GetUserById(id);
             if (user is null) {
                 return NotFound($"Id = {id} co ton tai meo dau ma tim!");

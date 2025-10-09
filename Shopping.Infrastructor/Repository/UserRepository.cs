@@ -1,4 +1,5 @@
-﻿using Shopping.Infrastructure.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Shopping.Infrastructure.Models;
 using Shopping.Infrastructure.Repository.IBase;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,10 @@ namespace Shopping.Infrastructure.Repository {
 
         public void DeleteUser(User user) {
             Delete(user);
+        }
+
+        public async Task<bool> ExistByEmailAsync(string email, CancellationToken ct) {
+            return await _context.Users.AnyAsync(x => x.Email == email);
         }
 
         public IEnumerable<User> GetAllUser() {
