@@ -165,3 +165,4 @@ D:\DeveloperWithCSharp\Project\Shopping\Shopping.Api\bin\Debug\net8.0\Newtonsoft
 D:\DeveloperWithCSharp\Project\Shopping\Shopping.Api\bin\Debug\net8.0\FluentValidation.dll
 D:\DeveloperWithCSharp\Project\Shopping\Shopping.Api\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 D:\DeveloperWithCSharp\Project\Shopping\Shopping.Api\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\DeveloperWithCSharp\Project\Shopping\Shopping.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

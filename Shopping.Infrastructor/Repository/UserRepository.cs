@@ -29,10 +29,18 @@ namespace Shopping.Infrastructure.Repository {
             return FindAll().OrderBy(x => x.Fullname).ToList();
         }
 
+        public Task<User?> GetUserByEmailAsync(string email) {
+            return FindWithCondition(user => user.Email.Equals(email)).FirstOrDefaultAsync();
+        }
+
         public User GetUserById(int id) {
             return FindWithCondition(user => user.Id == id).FirstOrDefault();
             // lay nguoi dung co id bang id truyen vao sau do lay ket qua dau tien, neu khong co thi tra ve gia tri mac dinh
             // cua object la gia tri null.
+        }
+
+        public async Task<User?> GetUserByRefreshToken(string refreshToken) {
+            return await FindWithCondition(user => user.RefreshToken.Equals(refreshToken)).FirstOrDefaultAsync();
         }
 
         public void UpdateUser(User user) {

@@ -23,7 +23,7 @@ namespace Shopping.Infrastructure.Models {
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public ICollection<CartItem> CartItem { get; set; }
-        public List<Category>? Categories { get; set; }
+        public List<Category>? Categories { get; set; } = new List<Category>();
         public ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

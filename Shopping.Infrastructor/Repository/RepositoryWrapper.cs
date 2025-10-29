@@ -6,6 +6,7 @@ namespace Shopping.Infrastructure.Repository {
         private ShoppingContext _shoppingContext;
         private IUserRepository _userRepository;
         private IProductRepository _productRepository;
+        private ICategoryRepository _categoryRepository;
 
         public IUserRepository UserRepository {
             get {
@@ -26,6 +27,15 @@ namespace Shopping.Infrastructure.Repository {
                     _productRepository = new ProductRepository(_shoppingContext);
                 }
                 return _productRepository;
+            }
+        }
+
+        public ICategoryRepository CategoryRepository {
+            get {
+                if (_categoryRepository == null) {
+                    _categoryRepository = new CategoryReponsitory(_shoppingContext);
+                }
+                return _categoryRepository;
             }
         }
 

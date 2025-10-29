@@ -11,6 +11,22 @@
   },
   {
     "ContainingType": "Shopping.Api.Controllers.ProductController",
+    "Method": "CreateNewProduct",
+    "RelativePath": "api/Product",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productRequest",
+        "Type": "Shopping.ApplicationService.DTO.Request.Product.ProductRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shopping.Api.Controllers.ProductController",
     "Method": "GetProduct",
     "RelativePath": "api/Product/{id}",
     "HttpMethod": "GET",
@@ -37,7 +53,7 @@
   },
   {
     "ContainingType": "Shopping.Api.Controllers.UserController",
-    "Method": "CreateUser",
+    "Method": "RegisterAsync",
     "RelativePath": "api/User",
     "HttpMethod": "POST",
     "IsController": true,
@@ -45,7 +61,7 @@
     "Parameters": [
       {
         "Name": "userRequest",
-        "Type": "Shopping.ApplicationService.DTO.Request.UserRequestSignin",
+        "Type": "Shopping.ApplicationService.DTO.Request.User.RegisterRequest",
         "IsRequired": true
       }
     ],
@@ -82,7 +98,7 @@
       },
       {
         "Name": "userRequestUpdate",
-        "Type": "Shopping.ApplicationService.DTO.Request.UserRequestUpdate",
+        "Type": "Shopping.ApplicationService.DTO.Request.User.UpdateRequest",
         "IsRequired": false
       }
     ],
@@ -123,6 +139,53 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shopping.Api.Controllers.UserController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/User/changePass/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "changePassword",
+        "Type": "Shopping.ApplicationService.DTO.Request.User.ChangePassword",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shopping.Api.Controllers.UserController",
+    "Method": "LoginAsync",
+    "RelativePath": "api/User/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "Shopping.ApplicationService.DTO.Request.User.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shopping.Api.Controllers.UserController",
+    "Method": "RefreshTokenAccess",
+    "RelativePath": "api/User/refresh",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

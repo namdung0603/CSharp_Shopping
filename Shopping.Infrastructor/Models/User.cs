@@ -2,6 +2,7 @@
 using Shopping.Infrastructure.Models.Base;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Shopping.Infrastructure.Models {
     public class User : BaseModel {
@@ -16,14 +17,22 @@ namespace Shopping.Infrastructure.Models {
 
         [Required]
         public required string Password { get; set; }
+
+        [AllowNull]
         public string? Avatar { get; set; }
         [Column(TypeName = "int")]
         public RoleType Role { get; set; } = RoleType.USER;
 
         [Column(TypeName = "bit")]
         public bool IsActive { get; set; } = false;
+
+        [MaxLength(255)]
+        [Required]
+        public required string Address { get; set; }
         public string? AccessToken { get; set; }
         public DateTime? AccessTokenExpired { get; set; }
+
+        [MaxLength(512)]
         public string? RefreshToken { get; set; }
         public DateTime? RefreshTokenExpired { get; set; }
 

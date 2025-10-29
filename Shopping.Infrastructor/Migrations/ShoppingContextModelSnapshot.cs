@@ -333,8 +333,12 @@ namespace Shopping.Infrastructure.Migrations
                     b.Property<int>("AccountType")
                         .HasColumnType("int");
 
-                    b.Property<string>("Avatar")
+                    b.Property<string>("Address")
                         .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Avatar")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -355,7 +359,8 @@ namespace Shopping.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RefreshToken")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(512)
+                        .HasColumnType("nvarchar(512)");
 
                     b.Property<DateTime?>("RefreshTokenExpired")
                         .HasColumnType("datetime2");

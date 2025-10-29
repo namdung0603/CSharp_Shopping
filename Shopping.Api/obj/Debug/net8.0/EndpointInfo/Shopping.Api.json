@@ -15,6 +15,40 @@
             "description": "OK"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/Product/{id}": {
@@ -59,22 +93,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequestSignin"
+                "$ref": "#/components/schemas/RegisterRequest"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequestSignin"
+                "$ref": "#/components/schemas/RegisterRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequestSignin"
+                "$ref": "#/components/schemas/RegisterRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequestSignin"
+                "$ref": "#/components/schemas/RegisterRequest"
               }
             }
           }
@@ -127,22 +161,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequestUpdate"
+                "$ref": "#/components/schemas/UpdateRequest"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequestUpdate"
+                "$ref": "#/components/schemas/UpdateRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequestUpdate"
+                "$ref": "#/components/schemas/UpdateRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequestUpdate"
+                "$ref": "#/components/schemas/UpdateRequest"
               }
             }
           }
@@ -231,10 +265,137 @@
           }
         }
       }
+    },
+    "/api/User/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/changePass/{id}": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePassword"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePassword"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePassword"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePassword"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/refresh": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "ChangePassword": {
+        "type": "object",
+        "properties": {
+          "newPassword": {
+            "type": "string",
+            "nullable": true
+          },
+          "reNewPassword": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginRequest": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Operation": {
         "type": "object",
         "properties": {
@@ -272,7 +433,43 @@
         "type": "integer",
         "format": "int32"
       },
-      "UserRequestSignin": {
+      "ProductRequest": {
+        "required": [
+          "categories",
+          "price",
+          "productName",
+          "quantity",
+          "supplier"
+        ],
+        "type": "object",
+        "properties": {
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "supplier": {
+            "type": "string",
+            "nullable": true
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterRequest": {
         "required": [
           "address",
           "email",
@@ -309,7 +506,7 @@
         },
         "additionalProperties": false
       },
-      "UserRequestUpdate": {
+      "UpdateRequest": {
         "type": "object",
         "properties": {
           "fullName": {
@@ -321,10 +518,6 @@
             "nullable": true
           },
           "avatar": {
-            "type": "string",
-            "nullable": true
-          },
-          "password": {
             "type": "string",
             "nullable": true
           }

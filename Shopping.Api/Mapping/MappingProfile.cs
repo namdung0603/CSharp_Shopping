@@ -1,20 +1,18 @@
 ﻿using AutoMapper;
-using Shopping.ApplicationService.DTO.Request;
+using Shopping.ApplicationService.DTO.Request.Product;
+using Shopping.ApplicationService.DTO.Request.User;
 using Shopping.ApplicationService.DTO.Response;
 using Shopping.Infrastructure.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shopping.ApplicationService.Mapping {
     public class MappingProfile : Profile {
         public MappingProfile() {
             CreateMap<User, UserResponse>();
-            CreateMap<UserRequestSignin, User>();
-            CreateMap<UserRequestUpdate, User>();
-            CreateMap<User, UserRequestUpdate>();
+            CreateMap<RegisterRequest, User>();
+            CreateMap<UpdateRequest, User>();
+            CreateMap<User, UpdateRequest>();
+            CreateMap<ProductRequest, Product>()
+                .ForMember(dest => dest.Categories, opt => opt.Ignore());
         }
     }
 }
