@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 namespace Shopping.Infrastructure.Repository.IBase {
     public interface IProductRepository : IRepository<Product> {
         IEnumerable<Product> GetAllProduct();
-        Product GetProductById(int id);
+        Task<Product?> GetProductById(int id);
+        void CreateProduct(Product product);
+        void DeleteProduct(Product product);
+        void UpdateProduct(Product product);
     }
 }

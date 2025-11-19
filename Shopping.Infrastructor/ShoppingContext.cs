@@ -21,6 +21,25 @@ namespace Shopping.Infrastructure {
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Product>()
+                .HasMany(p => p.Categories)
+                .WithMany(c => c.Products)
+                .UsingEntity<Dictionary<string, object>>(
+                "CategoryProduct",
+                j => j.HasOne<Category>()
+                    .WithMany()
+                    .HasForeignKey("CategoriesId")
+                    .OnDelete(DeleteBehavior.Cascade),
+                j => j.HasOne<Product>()
+                    .WithMany()
+                    .HasForeignKey("ProductsId")
+                    .OnDelete(DeleteBehavior.Cascade),
+                j => {
+                    j.ToTable("CategoryProduct");
+                    j.HasKey("ProductsId", "CategoriesId");
+                }
+                );
+
         }
 
     }

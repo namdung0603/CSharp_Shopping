@@ -1,19 +1,28 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
+﻿using Asp.Versioning;
+using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.EntityFrameworkCore;
 using Shopping.ApplicationService.DTO.Request.Product;
+using Shopping.ApplicationService.DTO.Response;
 using Shopping.Contract;
+using Shopping.Infrastructure;
 using Shopping.Infrastructure.Models;
+using System.Xml.XPath;
 
 namespace Shopping.Api.Controllers {
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase {
         private readonly IRepositoryWrapper _repository;
         private readonly IMapper _mapper;
-        public ProductController(IRepositoryWrapper repository, IMapper mapper) {
+        private readonly ShoppingContext _context;
+        public ProductController(IRepositoryWrapper repository, IMapper mapper, ShoppingContext context) {
             _repository = repository;
             _mapper = mapper;
+            _context = context;
         }
 
         [HttpGet]
@@ -22,20 +31,23 @@ namespace Shopping.Api.Controllers {
             if (products == null) {
                 return BadRequest("Lam del gi co san pham ma lay!");
             }
-            return Ok(products);
+            var productsResponse = _mapper.Map<IEnumerable<ProductResponse>>(products);
+            return Ok(productsResponse);
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetProduct(int id) {
-            var product = _repository.ProductRepository.GetProductById(id);
+        public async Task<IActionResult> GetProduct(int id) {
+            var product = await _repository.ProductRepository.GetProductById(id);
             if (product == null) {
                 return BadRequest("Khong co dau!");
             }
-            return Ok(product);
+
+            var productResponse = _mapper.Map<ProductResponse>(product);
+            return Ok(productResponse);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateNewProduct([FromBody] ProductRequest productRequest) {
+        public async Task<IActionResult> CreateNewProduct([FromBody] ProductRequest productRequest, CancellationToken ct) {
             if (productRequest is null) {
                 return BadRequest("Co loi xay ra trong qua trinh tao san pham! Tao san pham that bai!");
             }
@@ -49,15 +61,84 @@ namespace Shopping.Api.Controllers {
                 return BadRequest("Du lieu khong hop le!");
             }
 
-            foreach (string category in productRequest.Categories) {
-                var categoryModel = await _repository.CategoryRepository.GetCategoryByNameAsync(category);
-                if (categoryModel is null) {
-                    return BadRequest("Bi loi trong qua trinh gan category! Co category khong ton tai!");
-                }
-                product.Categories.Add(categoryModel);
+            //var nameCategories = productRequest.Categories
+            //    .Where(s => !string.IsNullOrWhiteSpace(s))
+            //    .Select(s => s.Trim())
+            //    .Distinct(StringComparer.OrdinalIgnoreCase)
+            //    .ToList();
+            if (productRequest.Categories.Count() == 0) {
+                return BadRequest("Chua chon category!");
             }
 
-            return Ok(product);
+            var categoriesForEntity = await _context.Categories
+                .Where(s => productRequest.Categories.Contains(s.Id))
+                .ToListAsync(ct);
+            product.Categories = categoriesForEntity;
+            var productResponse = _mapper.Map<ProductResponse>(product);
+            _repository.ProductRepository.CreateProduct(product);
+            _repository.Save();
+
+            return Ok(productResponse);
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProduct(int id) {
+            var product = await _repository.ProductRepository.GetProductById(id);
+            if (product is null) {
+                return NotFound($"Khong tim thay san pham co id = {id} !");
+            }
+            _repository.ProductRepository.DeleteProduct(product);
+            _repository.Save();
+            return Ok("Da xoa san pham!");
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateProduct(int id, [FromBody] ProductRequest productRequest) {
+
+            var product = await _repository.ProductRepository.GetProductById(id);
+            if (product is null) {
+                return NotFound($"Khong tim thay san pham co id = {id}");
+            }
+            _mapper.Map(productRequest, product);
+            var wantedCategories = productRequest.Categories?.Distinct().ToList() ?? new List<int>();
+            await _context.Set<Dictionary<string, object>>("CategoryProduct")
+                .Where(e => (int)e["ProductsId"] == id)
+                .ExecuteDeleteAsync();
+            var cats = await _context.Categories
+                .Where(c => wantedCategories.Contains(c.Id))
+                .ToListAsync();
+            product.Categories = cats;
+            _repository.ProductRepository.UpdateProduct(product);
+            _repository.Save();
+            var productResponse = _mapper.Map<ProductResponse>(product);
+            return Ok(productResponse);
+        }
+        [HttpPatch("{id}")]
+        public async Task<ActionResult> UpdatePartialProduct(int id, [FromBody] JsonPatchDocument<ProductUpdateDetail> patchDoc) {
+            var product = await _repository.ProductRepository.GetProductById(id);
+            if (product is null) {
+                return NotFound($"Khong tim thay san pham co id = {id}");
+            }
+            var productPatch = _mapper.Map<ProductUpdateDetail>(product);
+            patchDoc.ApplyTo(productPatch, ModelState);
+            if (!ModelState.IsValid) {
+                return BadRequest(ModelState);
+            }
+
+            _mapper.Map(productPatch, product);
+            if (productPatch.Categories is not null) {
+                var wantedCategories = productPatch.Categories?.Distinct().ToList() ?? new List<int>();
+                await _context.Set<Dictionary<string, object>>("CategoryProduct")
+                     .Where(c => (int)c["ProductsId"] == id)
+                     .ExecuteDeleteAsync();
+                var cats = await _context.Categories
+                    .Where(c => wantedCategories.Contains(c.Id))
+                    .ToListAsync();
+                product.Categories = cats;
+            }
+            _repository.ProductRepository.UpdateProduct(product);
+            await _context.SaveChangesAsync();
+            var response = _mapper.Map<ProductResponse>(product);
+            return Ok(response);
         }
     }
 }

@@ -1,0 +1,105 @@
+﻿using Asp.Versioning;
+using AutoMapper;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Shopping.ApplicationService.DTO.Request.Product;
+using Shopping.ApplicationService.DTO.Response;
+using Shopping.Contract;
+using Shopping.Infrastructure;
+using Shopping.Infrastructure.Models;
+using System.Threading.Tasks;
+
+namespace Shopping.Api.Controllers {
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiController]
+    public class ProductController : ControllerBase {
+        private readonly IRepositoryWrapper _repository;
+        private readonly IMapper _mapper;
+        private readonly ShoppingContext _context;
+        public ProductController(IRepositoryWrapper repository, IMapper mapper, ShoppingContext context) {
+            _repository = repository;
+            _mapper = mapper;
+            _context = context;
+        }
+
+        [HttpGet]
+        public IActionResult GetAllProducts() {
+            var products = _repository.ProductRepository.GetAllProduct();
+            if (products == null) {
+                return BadRequest("Lam del gi co san pham ma lay!");
+            }
+            var productsResponse = _mapper.Map<IEnumerable<ProductResponse>>(products);
+            return Ok(productsResponse);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetProduct(int id) {
+            var product = await _repository.ProductRepository.GetProductById(id);
+            if (product == null) {
+                return BadRequest("Khong co dau!");
+            }
+
+            var productResponse = _mapper.Map<ProductResponse>(product);
+            return Ok(productResponse);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateNewProduct([FromBody] ProductRequest productRequest, CancellationToken ct) {
+            if (productRequest is null) {
+                return BadRequest("Co loi xay ra trong qua trinh tao san pham! Tao san pham that bai!");
+            }
+
+            var product = _mapper.Map<Product>(productRequest);
+            if (product is null) {
+                return BadRequest("Khong the tao duoc doi tuong!");
+            }
+
+            if (!ModelState.IsValid) {
+                return BadRequest("Du lieu khong hop le!");
+            }
+
+            var nameCategories = productRequest.Categories
+                .Where(s => !string.IsNullOrWhiteSpace(s))
+                .Select(s => s.Trim())
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToList();
+            if (nameCategories.Count() == 0) {
+                return BadRequest("Chua chon category!");
+            }
+
+            var categoriesForEntity = await _context.Categories
+                .Where(s => nameCategories.Contains(s.CatagoryName))
+                .ToListAsync(ct);
+            var found = categoriesForEntity.Select(c => c.CatagoryName).ToHashSet(StringComparer.OrdinalIgnoreCase);
+            var missing = nameCategories.Where(s => !found.Contains(s)).ToList();
+            if (missing.Count() > 0) {
+                return BadRequest($"Category khong ton tai: {string.Join(",", missing)}");
+            }
+            product.Categories = categoriesForEntity;
+            var productResponse = _mapper.Map<ProductResponse>(product);
+            _repository.ProductRepository.CreateProduct(product);
+            _repository.Save();
+
+            return Ok(productResponse);
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProduct(int id) {
+            var product = await _repository.ProductRepository.GetProductById(id);
+            if (product is null) {
+                return NotFound($"Khong tim thay san pham co id = {id} !");
+            }
+            _repository.ProductRepository.DeleteProduct(product);
+            _repository.Save();
+            return Ok("Da xoa san pham!");
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateProduct(int id, [FromBody] ProductRequest productRequest) {
+            var product = await _context.Products
+                .Include()
+
+        }
+    }
+}

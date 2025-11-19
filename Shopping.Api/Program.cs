@@ -1,4 +1,5 @@
 
+using Asp.Versioning;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
@@ -32,6 +33,12 @@ namespace Shopping.Api {
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             builder.Services.AddScoped<IAuthService, AuthService>();
+            builder.Services.AddApiVersioning(option => {
+                option.DefaultApiVersion = new ApiVersion(1, 0);
+                option.AssumeDefaultVersionWhenUnspecified = true;
+                option.ReportApiVersions = true;
+                option.ApiVersionReader = new UrlSegmentApiVersionReader();
+            });
 
 
             var app = builder.Build();

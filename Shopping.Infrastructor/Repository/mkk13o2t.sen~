@@ -1,0 +1,33 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Shopping.Infrastructure.Models;
+using Shopping.Infrastructure.Repository.IBase;
+
+namespace Shopping.Infrastructure.Repository {
+    public class ProductRepository : RepositoryBase<Product>, IProductRepository {
+        public ProductRepository(ShoppingContext context) : base(context) {
+
+        }
+
+        public void CreateProduct(Product product) {
+            Create(product);
+        }
+
+        public void DeleteProduct(Product product) {
+            Delete(product);
+        }
+
+        public IEnumerable<Product> GetAllProduct() {
+            return FindAll().OrderBy(product => product.ProductName).Include(product => product.Categories).ToList();
+        }
+
+        public async Task<Product?> GetProductById(int id) {
+            return await FindWithCondition(product => product.Id == id)
+                .Include(product => product.Categories)
+                .FirstOrDefaultAsync(product => product.Id == id);
+        }
+
+        public void UpdateProduct(Product product) {
+            Update(product);
+        }
+    }
+}

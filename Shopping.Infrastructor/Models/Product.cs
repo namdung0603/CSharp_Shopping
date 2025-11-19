@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Shopping.Infrastructure.Models {
@@ -23,7 +24,7 @@ namespace Shopping.Infrastructure.Models {
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public ICollection<CartItem> CartItem { get; set; }
-        public List<Category>? Categories { get; set; } = new List<Category>();
+        public List<Category>? Categories { get; set; }
         public ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

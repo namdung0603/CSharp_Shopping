@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace Shopping.Infrastructure.Models {
     public class Category {
@@ -9,6 +11,7 @@ namespace Shopping.Infrastructure.Models {
         public required string CatagoryName { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+        [JsonIgnore] // phai dung JsonIgnore cua NewtonSoft.Json
         public ICollection<Product>? Products { get; set; }
     }
 }

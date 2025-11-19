@@ -2,17 +2,23 @@
   {
     "ContainingType": "Shopping.Api.Controllers.ProductController",
     "Method": "GetAllProducts",
-    "RelativePath": "api/Product",
+    "RelativePath": "api/v{version}/Product",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "Shopping.Api.Controllers.ProductController",
     "Method": "CreateNewProduct",
-    "RelativePath": "api/Product",
+    "RelativePath": "api/v{version}/Product",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -21,6 +27,11 @@
         "Name": "productRequest",
         "Type": "Shopping.ApplicationService.DTO.Request.Product.ProductRequest",
         "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -28,7 +39,7 @@
   {
     "ContainingType": "Shopping.Api.Controllers.ProductController",
     "Method": "GetProduct",
-    "RelativePath": "api/Product/{id}",
+    "RelativePath": "api/v{version}/Product/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -37,41 +48,20 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Shopping.Api.Controllers.UserController",
-    "Method": "GetAllUser",
-    "RelativePath": "api/User",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Shopping.Api.Controllers.UserController",
-    "Method": "RegisterAsync",
-    "RelativePath": "api/User",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
+      },
       {
-        "Name": "userRequest",
-        "Type": "Shopping.ApplicationService.DTO.Request.User.RegisterRequest",
+        "Name": "version",
+        "Type": "",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Shopping.Api.Controllers.UserController",
-    "Method": "GetById",
-    "RelativePath": "api/User/{id}",
-    "HttpMethod": "GET",
+    "ContainingType": "Shopping.Api.Controllers.ProductController",
+    "Method": "DeleteProduct",
+    "RelativePath": "api/v{version}/Product/{id}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -79,14 +69,19 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Shopping.Api.Controllers.UserController",
-    "Method": "UpdateUser",
-    "RelativePath": "api/User/{id}",
+    "ContainingType": "Shopping.Api.Controllers.ProductController",
+    "Method": "UpdateProduct",
+    "RelativePath": "api/v{version}/Product/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -97,33 +92,22 @@
         "IsRequired": true
       },
       {
-        "Name": "userRequestUpdate",
-        "Type": "Shopping.ApplicationService.DTO.Request.User.UpdateRequest",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Shopping.Api.Controllers.UserController",
-    "Method": "DeleteUser",
-    "RelativePath": "api/User/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
+        "Name": "productRequest",
+        "Type": "Shopping.ApplicationService.DTO.Request.Product.ProductRequest",
+        "IsRequired": true
+      },
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "version",
+        "Type": "",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Shopping.Api.Controllers.UserController",
-    "Method": "UpdateInformationDetail",
-    "RelativePath": "api/User/{id}",
+    "ContainingType": "Shopping.Api.Controllers.ProductController",
+    "Method": "UpdatePartialProduct",
+    "RelativePath": "api/v{version}/Product/{id}",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -137,6 +121,142 @@
         "Name": "patchDoc",
         "Type": "Microsoft.AspNetCore.JsonPatch.Operations.Operation[]",
         "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shopping.Api.Controllers.UserController",
+    "Method": "GetAllUser",
+    "RelativePath": "api/v{version}/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shopping.Api.Controllers.UserController",
+    "Method": "RegisterAsync",
+    "RelativePath": "api/v{version}/User",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userRequest",
+        "Type": "Shopping.ApplicationService.DTO.Request.User.RegisterRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shopping.Api.Controllers.UserController",
+    "Method": "GetById",
+    "RelativePath": "api/v{version}/User/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shopping.Api.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/v{version}/User/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userRequestUpdate",
+        "Type": "Shopping.ApplicationService.DTO.Request.User.UpdateRequest",
+        "IsRequired": false
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shopping.Api.Controllers.UserController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/v{version}/User/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shopping.Api.Controllers.UserController",
+    "Method": "UpdateInformationDetail",
+    "RelativePath": "api/v{version}/User/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "patchDoc",
+        "Type": "Microsoft.AspNetCore.JsonPatch.Operations.Operation[]",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -144,7 +264,7 @@
   {
     "ContainingType": "Shopping.Api.Controllers.UserController",
     "Method": "ChangePassword",
-    "RelativePath": "api/User/changePass/{id}",
+    "RelativePath": "api/v{version}/User/changePass/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -158,6 +278,11 @@
         "Name": "changePassword",
         "Type": "Shopping.ApplicationService.DTO.Request.User.ChangePassword",
         "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -165,7 +290,7 @@
   {
     "ContainingType": "Shopping.Api.Controllers.UserController",
     "Method": "LoginAsync",
-    "RelativePath": "api/User/login",
+    "RelativePath": "api/v{version}/User/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -174,6 +299,11 @@
         "Name": "login",
         "Type": "Shopping.ApplicationService.DTO.Request.User.LoginRequest",
         "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -181,11 +311,17 @@
   {
     "ContainingType": "Shopping.Api.Controllers.UserController",
     "Method": "RefreshTokenAccess",
-    "RelativePath": "api/User/refresh",
+    "RelativePath": "api/v{version}/User/refresh",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

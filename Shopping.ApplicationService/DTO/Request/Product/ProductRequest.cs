@@ -4,6 +4,6 @@
         public required double Price { get; set; }
         public required int Quantity { get; set; }
         public required string Supplier { get; set; }
-        public required List<string> Categories { get; set; }
+        public required List<int> Categories { get; set; }
     }
 }

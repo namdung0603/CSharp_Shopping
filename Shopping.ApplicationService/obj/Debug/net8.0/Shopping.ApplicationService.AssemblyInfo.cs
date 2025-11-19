@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Shopping.ApplicationService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3b19ee3b5396c974b514c6130fd038b268d8585")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb96a16f60ecab56f2d31429ce0905aadfb321ca")]
 [assembly: System.Reflection.AssemblyProductAttribute("Shopping.ApplicationService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Shopping.ApplicationService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
